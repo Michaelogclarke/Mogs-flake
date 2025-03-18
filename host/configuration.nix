@@ -158,6 +158,7 @@ programs.hyprland.package = inputs.hyprland.packages. "${pkgs.system}".hyprland;
     chromium
     vial
     nemo
+    protonvpn-gui
   ]; ## here
 
   # Some programs need SUID wrappers, can be configured further or are
