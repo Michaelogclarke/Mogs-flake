@@ -187,6 +187,7 @@ programs.hyprland.package = inputs.hyprland.packages. "${pkgs.system}".hyprland;
     nodePackages.npm
     ncspot
     rPackages.RobLox
+    neofetch
   ]; ## foo
  
 
