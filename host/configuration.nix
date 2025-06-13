@@ -47,11 +47,13 @@ programs.hyprland.package = inputs.hyprland.packages. "${pkgs.system}".hyprland;
     LC_TIME = "en_GB.UTF-8";
   };
 
-  # Enable the X11 windowing system.
-  # You can disable this if you're only using the Wayland session.
-  services.xserver.enable = true;
-
-
+  # Enable the X11 windowing system. and gnome
+  services.xserver = {
+    enable = true;
+    displayManager.gdm.enable = false;
+    desktopManager.gnome.enable = false;
+  };
+  
   # Enable the KDE Plasma Desktop Environment.
   services.displayManager.sddm.enable = true;
   services.desktopManager.plasma6.enable = true;
@@ -180,7 +182,6 @@ programs.hyprland.package = inputs.hyprland.packages. "${pkgs.system}".hyprland;
     imagemagick
     hyprlock
     code-cursor
-    windsurf
     python3Packages.flask
     python3Packages.python-dotenv
     nodejs_20
@@ -188,6 +189,11 @@ programs.hyprland.package = inputs.hyprland.packages. "${pkgs.system}".hyprland;
     ncspot
     rPackages.RobLox
     neofetch
+    steam-run
+    zed-editor
+    go
+    windsurf
+    kdePackages.kdeconnect-kde
   ]; ## foo
  
 
@@ -198,7 +204,7 @@ programs.hyprland.package = inputs.hyprland.packages. "${pkgs.system}".hyprland;
 
   ## Enabling flatpaks
   services.flatpak.enable = true;
-  # home server
+  # home server vpn
   services.tailscale.enable = true;
 
   # Garbage collection
